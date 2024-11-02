@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+
+    <header>
+        <h1>Book an Appointment</h1>
+    </header>
+
+    <main>
+        <form id="appointmentForm" class="form-card">
+            <section>
+                <h2>Patient Information</h2>
+                <label for="patientId">Patient ID:</label>
+                <input type="text" id="patientId" required>
+
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" required>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+            </section>
+
+            <section>
+                <h2>Select a Doctor</h2>
+                <label for="doctorName">Doctor's Name:</label>
+                <input type="text" id="doctorName" oninput="fetchDoctors()">
+                
+                <label for="specialization">Specialization:</label>
+                <select id="specialization" onchange="fetchDoctors()">
+                    <option value="">Select Specialization</option>
+                    <option value="Cardiologist">Cardiologist</option>
+                    <option value="Dermatologist">Dermatologist</option>
+                </select>
+
+                <label for="hospital">Hospital:</label>
+                <select id="hospital" onchange="fetchDoctors()">
+                    <option value="">Select Hospital</option>
+                    <option value="General">General Hospital</option>
+                    <option value="City Clinic">City Clinic</option>
+                </select>
+            </section>
+
+            <section>
+                <h2>Choose Appointment Date and Time</h2>
+                <label for="appointmentDate">Date:</label>
+                <input type="date" id="appointmentDate" required>
+
+                <label for="appointmentTime">Time:</label>
+                <select id="appointmentTime" required>
+                    <option value="">Select Time</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <!-- More time slots can be added here -->
+                </select>
+            </section>
+
+            <section>
+                <button type="button" onclick="confirmAppointment()">Confirm Appointment</button>
+                <div id="confirmationMessage"></div>
+            </section>
+        </form>
+    </main>
+
+    <script src="output.js"></script>
+</body>
+</html>

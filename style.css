@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: 
+        linear-gradient(135deg, rgba(142, 45, 226, 0.8), rgba(74, 0, 224, 0.8)), 
+        url('background.png'); /* Update path as needed */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-box {
+    background: rgba(31, 31, 46, 0.95); /* Added slight transparency */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+}
+
+h2 {
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 10px 10px 0;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    top: -5px;
+    color: #8e2de2;
+    font-size: 12px;
+}
+
+.btn {
+    background: linear-gradient(135deg, #8e2de2, #4a00e0);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+}
+
+p {
+    margin-top: 15px;
+}
+
+p a {
+    color: #8e2de2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+p a:hover {
+    text-decoration: underline;
+}

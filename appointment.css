@@ -1,0 +1,59 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('background.png') no-repeat center center fixed;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    color: #0a04b6;
+}
+
+.form-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 450px; /* Adjusted to make the box smaller */
+    margin: auto;
+}
+
+
+h2 {
+    color: #343a40;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input, select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #a9c820;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b2e313;
+}
+
+#confirmationMessage {
+    margin-top: 20px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border: 1px solid #08ce37;
+    border-radius: 5px;
+}
