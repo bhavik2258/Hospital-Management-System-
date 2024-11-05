@@ -1,106 +1,422 @@
+:root {
+    --primary: #3498db;
+    --secondary: #2c3e50;
+    --light: #f8f9fa;
+    --dark: #2c3e50;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
-body {
+/* Add this after the nav-links styles in your style.css file */
+
+.auth-buttons {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: 
-        linear-gradient(135deg, rgba(142, 45, 226, 0.8), rgba(74, 0, 224, 0.8)), 
-        url('background.png'); /* Update path as needed */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
+    gap: 1rem;
+    margin-left: 2rem;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.form-box {
-    background: rgba(31, 31, 46, 0.95); /* Added slight transparency */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    width: 350px;
-}
-
-h2 {
-    color: #fff;
+.btn-primary {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
     font-weight: 500;
-    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    color: white;
+    background-color: transparent;
+    border: 2px solid var(--primary);
 }
 
-.input-box {
-    position: relative;
-    margin-bottom: 30px;
+.btn-primary:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
 }
 
-.input-box input {
+.btn-login,
+.btn-signup {
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    color: var(--primary);
+    background-color: transparent;
+    border: 2px solid var(--primary);
+}
+
+.btn-login:hover {
+    color: white;
+    background-color: var(--primary);
+}
+
+.btn-signup {
+    color: white;
+    background-color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-signup:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+/* Responsive styles for auth buttons */
+@media (max-width: 768px) {
+    .auth-buttons {
+        margin-left: 1rem;
+    }
+
+    .btn-login,
+    .btn-signup {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+.about-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.about-popup h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.about-popup p {
+    margin-bottom: 1rem;
+}
+
+.about-popup ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-popup.show {
+    display: block;
+}
+
+.contact-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    min-width: 300px;
+}
+
+.contact-popup h3 {
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.contact-popup p {
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contact-popup i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.contact-popup.show {
+    display: block;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    padding: 10px 10px 10px 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
     background: none;
     border: none;
-    border-bottom: 2px solid #aaa;
-    color: #fff;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
-}
-
-.input-box label {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    pointer-events: none;
-    transform: translateY(-50%);
-    color: #aaa;
-    transition: 0.3s;
-}
-
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
-    top: -5px;
-    color: #8e2de2;
-    font-size: 12px;
-}
-
-.btn {
-    background: linear-gradient(135deg, #8e2de2, #4a00e0);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    width: 100%;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: 0.3s;
+    color: var(--secondary);
 }
 
-.btn:hover {
-    background: linear-gradient(135deg, #4a00e0, #8e2de2);
+.close-btn:hover {
+    color: var(--primary);
 }
 
-p {
-    margin-top: 15px;
+/* Loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-p a {
-    color: #8e2de2;
+.loader-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(44, 62, 80, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1.2rem 0;
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3498db, #00fcfc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s;
 }
 
-p a:hover {
-    text-decoration: underline;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('hospital-background.jpg');
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 1000px;
+    padding: 0 2rem;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons a {
+    margin: 0 1rem;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    background: var(--primary);
+    transition: background 0.3s;
+}
+
+.hero-buttons a:hover {
+    background: #2980b9;
+}
+
+/* Features Section */
+.features {
+    padding: 8rem 2rem;
+    background: var(--light);
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    padding: 8rem 2rem;
+    color: white;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-content p {
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 2rem 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 1rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+}
+
+.footer-section a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 0.5rem 0;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .features-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
 }

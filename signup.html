@@ -3,27 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Patient Registration</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
     <div class="container">
         <div class="form-box">
-            <h2>Sign Up</h2>
-            <form id="signupForm" onsubmit="registerUser(event)">
+            <h2>Patient Registration</h2>
+            <form id="signupForm" onsubmit="registerPatient(event)">
                 <div class="input-box">
-                    <input type="text" id="newUsername" required>
-                    <label>Username</label>
+                    <input type="text" id="fullName" required>
+                    <label>Full Name</label>
                 </div>
                 <div class="input-box">
                     <input type="email" id="email" required>
                     <label>Email</label>
                 </div>
                 <div class="input-box">
-                    <input type="password" id="newPassword" required>
+                    <input type="tel" id="phone" required>
+                    <label>Phone Number</label>
+                </div>
+                <div class="input-box">
+                    <input type="date" id="dob" required>
+                    <label>Date of Birth</label>
+                </div>
+                <div class="input-box">
+                    <select id="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <textarea id="address" required></textarea>
+                    <label>Address</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" id="password" required>
                     <label>Password</label>
                 </div>
-                <button type="submit" class="btn">Sign Up</button>
+                <div class="input-box">
+                    <input type="password" id="confirmPassword" required>
+                    <label>Confirm Password</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
                 <p>Already have an account? <a href="login.html">Login</a></p>
             </form>
         </div>

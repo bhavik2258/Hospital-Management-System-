@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+    <header>
+        <h1>Book an Appointment</h1>
+    </header>
+
+    <main>
+        <form id="appointmentForm" class="form-card">
+            <section>
+                <h2>Patient Information</h2>
+
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" required>
+
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" id="phoneNumber" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </section>
+
+            <section>
+                <h2>Appointment Details</h2>
+                <label for="department">Department:</label>
+                <select id="department" required>
+                    <option value="">Select Department</option>
+                    <!-- We'll populate this dynamically -->
+                </select>
+
+                <label for="doctor">Doctor:</label>
+                <select id="doctor" required>
+                    <option value="">Select Doctor</option>
+                    <!-- Will be populated based on department selection -->
+                </select>
+
+                <label for="appointmentDate">Date:</label>
+                <input type="date" id="appointmentDate" required>
+
+                <label for="appointmentTime">Time:</label>
+                <select id="appointmentTime" required>
+                    <option value="">Select Time</option>
+                    <option value="09:00">09:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="14:00">02:00 PM</option>
+                    <option value="15:00">03:00 PM</option>
+                    <option value="16:00">04:00 PM</option>
+                </select>
+            </section>
+
+            <section>
+                <h2>Reason for Visit</h2>
+                <textarea id="symptoms" rows="4" required 
+                    placeholder="Please describe your symptoms or reason for visit"></textarea>
+            </section>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

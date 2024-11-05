@@ -7,20 +7,27 @@
     <link rel="stylesheet" href="confirmation.css">
 </head>
 <body>
-
     <header>
         <h1>Appointment Confirmation</h1>
     </header>
 
     <main>
         <div id="appointmentDetails" class="confirmation-card">
-            <!-- Dynamic confirmation content will be injected here from output.js -->
+            <h2>Your appointment has been booked successfully!</h2>
+            <p>Appointment ID: <span id="appointmentId"></span></p>
+            <p>Patient Name: <span id="patientName"></span></p>
+            <p>Doctor: <span id="doctorName"></span></p>
+            <p>Department: <span id="department"></span></p>
+            <p>Date: <span id="appointmentDate"></span></p>
+            <p>Time: <span id="appointmentTime"></span></p>
+            <p>Please arrive 15 minutes before your scheduled appointment time.</p>
         </div>
         <div class="button-container">
             <button onclick="window.location.href='appointment.html'">Book Another Appointment</button>
+            <button onclick="logout()">Logout</button>
         </div>
     </main>
 
-    <script src="output.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

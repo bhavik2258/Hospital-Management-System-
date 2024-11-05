@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MHS - Modern Healthcare Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="logo">MHS-Modern Healthcare Solutions</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-login">Login</a>
+                <a href="signup.html" class="btn-signup">Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Modern Healthcare Solutions</h1>
+            <p class="hero-text">Experience the future of healthcare management with our innovative solutions</p>
+            <div class="hero-buttons">
+                <a href="#services" class="btn-primary">Our Services</a>
+                <a href="#contact" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="features-container">
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fas fa-user-md"></i>
+                <h3>Expert Doctors</h3>
+                <p>Connect with our experienced healthcare professionals</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Easy Scheduling</h3>
+                <p>Book appointments with just a few clicks</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-clock"></i>
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock medical assistance</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-hospital-user"></i>
+                <h3>Patient Portal</h3>
+                <p>Access your medical records anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Get Started?</h2>
+            <p>Join thousands of satisfied patients using our platform</p>
+            <a href="signup.html" class="btn-primary">Register Now</a>
+        </div>
+    </section>
+
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section" class="contact-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                <p><i class="fas fa-envelope"></i> contact@mhs.com</p>
+                <p><i class="fas fa-location-dot"></i> Andheri, Mumbai</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Connect With Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MHS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="contact-popup" id="contactPopup">
+    <button class="close-btn" id="closeContact">&times;</button>
+    <h3>Contact Us</h3>
+    <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+    <p><i class="fas fa-envelope"></i> contact@mhs.com</p>
+    <p><i class="fas fa-location-dot"></i> Andheri, Mumbai</p>
+</div>
+
+<div class="about-popup" id="aboutPopup">
+    <button class="close-btn" id="closeAbout">&times;</button>
+    <h3>About Us</h3>
+    <p>Modern Healthcare Solutions (MHS) is a leading provider of innovative healthcare management systems. Our mission is to revolutionize the healthcare industry by offering cutting-edge technology solutions that improve patient care, streamline operations, and enhance overall healthcare experiences.</p>
+    <p>Founded in 2024, MHS has quickly become a trusted partner for healthcare providers, offering a comprehensive suite of services including:</p>
+    <ul>
+        <li>Advanced Electronic Health Records (EHR) systems</li>
+        <li>Telemedicine platforms</li>
+        <li>Patient engagement tools</li>
+        <li>Healthcare analytics and reporting</li>
+    </ul>
+    <p>At MHS, we're committed to shaping the future of healthcare through technology, innovation, and unwavering dedication to improving patient outcomes.</p>
+</div>
+</body>
+</html>
